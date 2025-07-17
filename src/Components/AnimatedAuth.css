@@ -1,0 +1,116 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  position: relative;
+}
+
+.smoke {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.smoke span {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent);
+  border-radius: 50%;
+  animation: smokeMove 30s infinite linear;
+  filter: blur(50px);
+}
+
+.smoke span:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.smoke span:nth-child(2) { top: 50%; left: 70%; animation-delay: 8s; }
+.smoke span:nth-child(3) { top: 80%; left: 30%; animation-delay: 15s; }
+
+@keyframes smokeMove {
+  0%   { transform: translateY(0) scale(1); opacity: 0.6; }
+  50%  { transform: translateY(-200px) scale(1.2); opacity: 0.2; }
+  100% { transform: translateY(-400px) scale(1); opacity: 0; }
+}
+
+.card {
+  width: 340px;
+  height: 430px;
+  perspective: 1000px;
+  position: relative;
+  z-index: 1;
+}
+
+.card .front,
+.card .back {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.8s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(0);
+}
+
+input {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+button {
+  background-color: #2a5298;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e3c72;
+}
+
+.flip-link {
+  margin-top: 12px;
+  text-align: center;
+  color: #2a5298;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}

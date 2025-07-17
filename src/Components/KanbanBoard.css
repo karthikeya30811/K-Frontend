@@ -1,0 +1,146 @@
+.kanban-wrapper {
+  padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.board-title {
+  text-align: center;
+  color: #2a5298;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.column {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.task-card {
+  background: #e6ecf0;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.task-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+/* Form Container */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 150px;
+}
+
+.task-form textarea {
+  resize: vertical;
+  height: 40px;
+}
+
+.task-form button {
+  background-color: #2a5298;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.task-form button:hover {
+  background-color: #1e3c72;
+}
+
+/* Kanban Columns with Scroll */
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.column {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  width: 30%;
+  max-height: 75vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.column::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .task-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .task-form input,
+  .task-form textarea,
+  .task-form select,
+  .task-form button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .task-form textarea {
+    height: 60px;
+  }
+}
+
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.kanban-column {
+  flex: 1;
+  min-width: 280px;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
